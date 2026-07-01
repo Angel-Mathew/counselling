@@ -1,0 +1,17 @@
+:root {
+  --wine: #6F1D1B;
+  --wine-dark: #4a1210;
+  --wine-deep: #3a0e0d;
+  --gold: #BB9457;
+  --gold-light: #d4ae7a;
+  --gold-pale: #fdf6ec;
+  --cream: #fdfaf5;
+  --border: #e8d5c0;
+  --text: #1a0e08;
+  --text-mid: #5a3e2c;
+  --text-muted: #9a7a60;
+  --white: #ffffff;
+  --sidebar-width: 220px;
+  --header-height: 70px;
+  --topbar-height: 36px;
+}

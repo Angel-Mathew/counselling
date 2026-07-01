@@ -1,0 +1,89 @@
+import{
+  IconMail, 
+  IconPhone, 
+  IconMapPin, 
+  IconBrandYoutube, 
+  IconBrandFacebook, 
+  IconBrandWhatsappFilled
+} from '@tabler/icons-react'    
+
+const TopBar = () => {
+    return (
+        <div style={{
+            background:"var(--wine-deep)",
+            padding:"0 24px",
+            height:"var(--topbar-height)",
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"space-between",
+            position:"fixed",
+            top:0,
+            left:0,
+            right:0,
+            zIndex:1000
+        }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+        <a href="mailto:girijasam72@mail.com" style={{
+          display: 'flex', alignItems: 'center', gap: '5px',
+          color: 'rgba(255,255,255,0.6)', fontSize: '11px',
+        }}>
+              <IconMail size={13} color="var(--gold)" />
+          girijasam72@mail.com
+        </a>
+        <a href="tel:+919744208752" style={{
+            display:"flex", alignItems:"center", gap:"5px",
+            color:"rgba(255,255,255,0.6", fontSize:"11px"
+        }}>
+          <IconMail size={13} color="var(--gold)" />
+          girijasam72@mail.com
+        </a>
+        <a href="tel:+919744208752" style={{
+          display: 'flex', alignItems: 'center', gap: '5px',
+          color: 'rgba(255,255,255,0.6)', fontSize: '11px',
+        }}>
+          <IconPhone size={13} color="var(--gold)" />
+          +91 97442 08752
+        </a>
+        <span style={{
+          display: 'flex', alignItems: 'center', gap: '5px',
+          color: 'rgba(255,255,255,0.6)', fontSize: '11px',
+        }}>
+          <IconMapPin size={13} color="var(--gold)" />
+          Kottayam, Kerala
+        </span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <a href="#" style={{
+          width: '22px', height: '22px',
+          background: 'rgba(187,148,87,0.15)',
+          borderRadius: '4px',
+          display: 'flex', alignItems: 'center',
+          justifyContent: 'center', color: 'var(--gold)',
+        }}>
+          <IconBrandYoutube size={13} />
+        </a>
+        <a href="#" style={{
+          width: '22px', height: '22px',
+          background: 'rgba(187,148,87,0.15)',
+          borderRadius: '4px',
+          display: 'flex', alignItems: 'center',
+          justifyContent: 'center', color: 'var(--gold)',
+        }}>
+          <IconBrandFacebook size={13} />
+        </a>
+         <a href="#" style={{
+          width: '22px', height: '22px',
+          background: 'rgba(187,148,87,0.15)',
+          borderRadius: '4px',
+          display: 'flex', alignItems: 'center',
+          justifyContent: 'center', color: 'var(--gold)',
+        }}>
+          <IconBrandWhatsappFilled size={13} />
+        </a>
+      </div>
+    </div>
+  )
+}
+export default TopBar
+
+    
