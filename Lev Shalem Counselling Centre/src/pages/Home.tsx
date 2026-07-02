@@ -55,13 +55,76 @@ const Home = () => {
           </div>
         ))}
       </div>
+        {/* ===== LATEST MESSAGES ===== */}
+      <div style={{ padding: '32px 28px', background: 'var(--cream)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: '22px',
+            color: 'var(--wine)',
+            fontWeight: 600,
+          }}>Latest Messages</h2>
+          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+          <a href="/media" style={{ color: 'var(--gold)', fontSize: '13px', fontWeight: 500 }}>
+            View all →
+          </a>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          {[
+            { title: 'Role of Women in Family', sub: 'Power Vision TV · Ep. 1', id: 'VIDEO_ID_1' },
+            { title: 'Bible Teaching Message', sub: 'Bible Teaching Series', id: 'VIDEO_ID_2' },
+            { title: "Women's Conference Talk", sub: "Women's Ministry", id: 'VIDEO_ID_3' },
+          ].map((video, i) => (
+            <div key={i} style={{
+              background: '#fff',
+              borderRadius: '10px',
+              border: '0.5px solid var(--border)',
+              overflow: 'hidden',
+              boxShadow: '0 2px 8px rgba(111,29,27,0.06)',
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, #1a0a09, #2a1210)',
+                aspectRatio: '16/9',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                cursor: 'pointer',
+              }}>
+                <div style={{
+                  width: '40px', height: '40px',
+                  background: 'var(--gold)',
+                  borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <IconPlayerPlay size={18} color="#fff" style={{ marginLeft: '3px' }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(187,148,87,0.7)', fontSize: '11px' }}>
+                  <IconBrandYoutube size={14} />
+                  YouTube
+                </div>
+              </div>
+              <div style={{ padding: '12px 14px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--wine)', marginBottom: '3px' }}>
+                  {video.title}
+                </div>
+                <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                  {video.sub}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ABOUT & COUNSELING SECTION */}
       <div style={{ padding: '48px 32px', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px' }}>
         <div style={{ border: '2px solid #bb9457', borderRadius: '12px', overflow: 'hidden' }}>
           <div style={{ background: '#6f1d1b', padding: '12px', textAlign: 'center', color: '#fff', fontWeight: 600 }}>About GIRIJA VARGHESE</div>
           <div style={{ padding: '32px', display: 'flex', gap: '24px' }}>
-            <img src="/assets/profileinhomepg.png" alt="Girija" style={{ width: '120px', height: '150px', borderRadius: '8px', objectFit: 'cover' }} />
+            <img src="/assets/profile.png" alt="Girija" style={{ width: '120px', height: '150px', borderRadius: '8px', objectFit: 'cover' }} />
             <div>
               <h3 style={{ color: '#6f1d1b', fontSize: '22px', margin: '10px 12px 15px 14px' }}>Counselor · Teacher · Speaker</h3>
               <p style={{ color: '#444', lineHeight: 1.6 }}>
