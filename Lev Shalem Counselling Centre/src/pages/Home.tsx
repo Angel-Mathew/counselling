@@ -6,15 +6,15 @@ import {
   IconClock,
   IconCreditCard,
   IconSchool,
-  IconMicrophone2, // Icon for Public Speaking
-  IconUsers // Icon for Ministry
+  IconMicrophone2, 
+  IconUsers 
 } from '@tabler/icons-react';
 
 const Home = () => {
   return (
     <div style={{ background: '#fff', minHeight: '100vh' }}>
       
-      {/*  HERO VIDEO SECTION */}
+      {/* HERO VIDEO SECTION */}
       <div style={{ position: 'relative', width: '100%', height: '480px', overflow: 'hidden' }}>
         <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}>
           <source src="/assets/hero_section.mp4" type="video/mp4" />
@@ -26,7 +26,7 @@ const Home = () => {
                Girija Varghese <br/><span style={{ color: '#bb9457' }}>(Girija Sam)</span>
              </h1>
              <p style={{ color: '#ccc', fontStyle: 'italic', marginBottom: '24px', fontSize: '18px' }}>"Healing Hearts • Building Lives • Inspiring Hope"</p>
-             <a href="/contact" style={{ background: '#bb9457', color: '#fff', padding: '14px 28px', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+             <a href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20counselling%20session" target="_blank" rel="noreferrer" style={{ background: '#bb9457', color: '#fff', padding: '14px 28px', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                <IconCalendarPlus size={20}/> Book Counselling
              </a>
           </div>
@@ -55,31 +55,27 @@ const Home = () => {
           </div>
         ))}
       </div>
-        {/* ===== LATEST MESSAGES ===== */}
-      <div style={{ padding: '32px 28px', background: 'var(--cream)' }}>
+
+      {/* RESTORED LATEST MESSAGES SECTION */}
+      <div style={{ padding: '32px 28px', background: '#fdfaf5' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-          <h2 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: '22px',
-            color: 'var(--wine)',
-            fontWeight: 600,
-          }}>Latest Messages</h2>
-          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-          <a href="/media" style={{ color: 'var(--gold)', fontSize: '13px', fontWeight: 500 }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', color: '#6f1d1b', fontWeight: 600 }}>Latest Messages</h2>
+          <div style={{ flex: 1, height: '1px', background: '#eee' }} />
+          <a href="https://youtu.be/MIjrvKjKJWY?si=lhmsMKPoSjaL-BwP" target="_blank" rel="noreferrer" style={{ color: '#bb9457', fontSize: '13px', fontWeight: 500, textDecoration: 'none' }}>
             View all →
           </a>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
           {[
-            { title: 'Role of Women in Family', sub: 'Power Vision TV · Ep. 1', id: 'VIDEO_ID_1' },
-            { title: 'Bible Teaching Message', sub: 'Bible Teaching Series', id: 'VIDEO_ID_2' },
-            { title: "Women's Conference Talk", sub: "Women's Ministry", id: 'VIDEO_ID_3' },
+            { title: 'Role of Women in Family', sub: 'Power Vision TV · Ep. 1' },
+            { title: 'Bible Teaching Message', sub: 'Bible Teaching Series' },
+            { title: "Women's Conference Talk", sub: "Women's Ministry" },
           ].map((video, i) => (
             <div key={i} style={{
               background: '#fff',
               borderRadius: '10px',
-              border: '0.5px solid var(--border)',
+              border: '0.5px solid #eee',
               overflow: 'hidden',
               boxShadow: '0 2px 8px rgba(111,29,27,0.06)',
             }}>
@@ -95,7 +91,7 @@ const Home = () => {
               }}>
                 <div style={{
                   width: '40px', height: '40px',
-                  background: 'var(--gold)',
+                  background: '#bb9457',
                   borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
@@ -107,10 +103,10 @@ const Home = () => {
                 </div>
               </div>
               <div style={{ padding: '12px 14px' }}>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--wine)', marginBottom: '3px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: '#6f1d1b', marginBottom: '3px' }}>
                   {video.title}
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                <div style={{ fontSize: '11px', color: '#666' }}>
                   {video.sub}
                 </div>
               </div>
@@ -126,10 +122,10 @@ const Home = () => {
           <div style={{ padding: '32px', display: 'flex', gap: '24px' }}>
             <img src="/assets/profile.png" alt="Girija" style={{ width: '120px', height: '150px', borderRadius: '8px', objectFit: 'cover' }} />
             <div>
-              <h3 style={{ color: '#6f1d1b', fontSize: '22px', margin: '10px 12px 15px 14px' }}>Counselor · Teacher · Speaker</h3>
+              <h3 style={{ color: '#6f1d1b', fontSize: '22px', margin: '0 0 10px 0' }}>Counselor · Teacher · Speaker</h3>
               <p style={{ color: '#444', lineHeight: 1.6 }}>
                 B.A. · M.S.W. · B.D. · L.Th. <br />
-                Serving alongside Rev. K. K. Sam for over 33 years in Biblical counseling and theological education across Kerala.
+                Serving alongside Rev. K. K. Sam for over 33 years in Biblical counseling and theological education.
               </p>
             </div>
           </div>
@@ -143,62 +139,40 @@ const Home = () => {
                 <div key={s} style={{ background: '#6f1d1b', color: '#fff', padding: '10px', borderRadius: '6px', fontSize: '13px' }}>{s}</div>
               ))}
             </div>
-            <button style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 32px', borderRadius: '25px', fontWeight: 700, cursor: 'pointer' }}>Book a session</button>
+            <a 
+              href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20session" 
+              target="_blank" 
+              rel="noreferrer" 
+              style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 32px', borderRadius: '25px', fontWeight: 700, cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}
+            >
+              Book a session
+            </a>
           </div>
         </div>
       </div>
 
-      {/*  MINISTRY, TEACHING & PUBLIC SPEAKING (3 COLUMN LAYOUT) */}
+      {/*  MINISTRY, TEACHING & SPEAKING */}
       <div style={{ margin: '0 32px 48px', border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden', background: '#fff' }}>
         <div style={{ background: '#6f1d1b', padding: '16px', textAlign: 'center', color: '#fff', fontWeight: 600, fontSize: '18px' }}>
           Ministry, Teaching & Speaking
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '40px', padding: '40px' }}>
-          
-          {/*  Teaching */}
           <div>
-            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconSchool size={20}/> Teaching
-            </h4>
+            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px' }}>Teaching</h4>
             <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px', lineHeight: 1.7, color: '#444' }}>
-              <li style={{ fontWeight: 600, color: '#6f1d1b', marginBottom: '4px' }}>Current:</li>
-              <li>• Zion Bible College, Mallappally</li>
-              <li>• Doulos Theological Seminary, Tiruvalla</li>
-              <li>• Peniel Bible School, Kottayam</li>
-              <li>• Jesus & Friends Seminary (Online)</li>
-              <li style={{ fontWeight: 600, color: '#999', marginTop: '10px', marginBottom: '4px' }}>Previously:</li>
-              <li>• Reach Out Theo. Seminary, Velloor</li>
-              <li>• Asian Bible College, Palarivattom</li>
-              <li>• Kerala Theo. Seminary, Pulamon</li>
-              <li>• Doulos Biblical Seminary, Vechhochira</li>
+              <li>• Zion Bible College</li><li>• Doulos Seminary</li><li>• Peniel Bible School</li><li>• Jesus & Friends</li>
             </ul>
           </div>
-
-          {/*  Ministry */}
           <div>
-            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconUsers size={20}/> Ministry
-            </h4>
+            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px' }}>Ministry</h4>
             <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px', lineHeight: 2, color: '#444' }}>
-              <li>• Bible Teaching & Counselling</li>
-              <li>• Family Ministry</li>
-              <li>• Women's & Youth Ministry</li>
-              <li>• Leadership Training</li>
-              <li>• Discipleship & Life Skills</li>
+              <li>• Bible Teaching</li><li>• Family Ministry</li><li>• Women's Ministry</li><li>• Discipleship</li>
             </ul>
           </div>
-
-          {/*  Public Speaking */}
           <div>
-            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconMicrophone2 size={20}/> Public Speaking
-            </h4>
+            <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px' }}>Public Speaking</h4>
             <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px', lineHeight: 2, color: '#444' }}>
-              <li>• Family & Leadership Seminars</li>
-              <li>• Youth Conferences</li>
-              <li>• Women's Meetings</li>
-              <li>• Bible Conferences</li>
-              <li>• Life Skills Workshops</li>
+              <li>• Family Seminars</li><li>• Youth Conferences</li><li>• Women's Meetings</li><li>• Bible Conferences</li>
             </ul>
           </div>
         </div>
@@ -222,7 +196,9 @@ const Home = () => {
             <div style={{ color: '#666', display: 'flex', gap: '8px' }}><IconCreditCard size={18}/> Installment options available</div>
           </div>
           <div style={{ background: '#bb955784', border: '2px dashed #bb9457', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '20px' }}>
-            <span style={{ color: '#6f1d1b', fontWeight: 600 }}>Fee structure and registration details provided upon enquiry.</span>
+            <a href="https://wa.me/919744208752?text=I%20want%20details%20about%20the%20Diploma%20Course%20Fee%20Structure" target="_blank" rel="noreferrer" style={{ color: '#6f1d1b', fontWeight: 600, textDecoration: 'none' }}>
+              Fee structure and registration details provided upon enquiry.
+            </a>
           </div>
         </div>
       </div>

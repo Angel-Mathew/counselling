@@ -52,7 +52,7 @@ const BibleTeaching = () => {
 
         <div style={{ display: 'flex', gap: '10px' }}>
           <a
-            href="https://www.youtube.com/@YourChannelName"
+            href="https://youtu.be/dogsMpB16gU?si=XL5VFNtBZ9Ck23-_"
             target="_blank"
             rel="noreferrer"
             style={{
@@ -83,79 +83,8 @@ const BibleTeaching = () => {
 
       <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
 
-        {/* SERMONS & MESSAGES */}
-        <div style={{
-          background: '#fff', borderRadius: '12px',
-          border: '0.5px solid var(--border)', overflow: 'hidden',
-          boxShadow: '0 2px 12px rgba(111,29,27,0.06)',
-        }}>
-          <div style={{
-            background: 'var(--wine)', padding: '12px 20px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconPlayerPlay size={16} color="var(--gold)" />
-              <span style={{ color: 'var(--gold)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Sermons & Messages
-              </span>
-            </div>
-            
-            <a
-              href="https://www.youtube.com/@YourChannelName"
-              target="_blank"
-              rel="noreferrer"
-              style={{ color: 'var(--gold)', fontSize: '11px', fontWeight: 500, textDecoration: 'none' }}
-            >
-              View all on YouTube →
-            </a>
-          </div>
-
-          <div style={{ padding: '20px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
-              {[
-                { title: 'Role of Women in the Family', sub: 'Power Vision TV · Ep. 1' },
-                { title: 'Role of Women in the Family', sub: 'Power Vision TV · Ep. 2' },
-                { title: 'Role of Women in the Family', sub: 'Power Vision TV · Ep. 3' },
-                { title: 'Bible Teaching Message', sub: 'Bible Teaching Series' },
-                { title: "Women's Conference Talk", sub: "Women's Ministry" },
-                { title: 'Leadership Seminar', sub: 'Leadership Training' },
-              ].map((video, i) => (
-                <div key={i} style={{
-                  background: 'var(--cream)', borderRadius: '8px',
-                  border: '0.5px solid var(--border)', overflow: 'hidden',
-                }}>
-                  <div style={{
-                    background: 'linear-gradient(135deg, #1a0a09, #2a1210)',
-                    aspectRatio: '16/9',
-                    display: 'flex', flexDirection: 'column',
-                    alignItems: 'center', justifyContent: 'center',
-                    gap: '6px', cursor: 'pointer',
-                  }}>
-                    <div style={{
-                      width: '34px', height: '34px',
-                      background: 'var(--gold)', borderRadius: '50%',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}>
-                      <IconPlayerPlay size={15} color="#fff" />
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(187,148,87,0.7)', fontSize: '10px' }}>
-                      <IconBrandYoutube size={12} /> YouTube
-                    </div>
-                  </div>
-                  <div style={{ padding: '10px 12px' }}>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--wine)', marginBottom: '2px' }}>
-                      {video.title}
-                    </div>
-                    <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>
-                      {video.sub}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+       
+        
         {/* BIBLE COLLEGES */}
         <div style={{
           background: '#fff', borderRadius: '12px',

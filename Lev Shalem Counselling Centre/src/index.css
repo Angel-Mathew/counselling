@@ -13,3 +13,10 @@ body {
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; font-family: inherit; outline: none; }
 img { max-width: 100%; display: block; }
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
+.sidebar-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

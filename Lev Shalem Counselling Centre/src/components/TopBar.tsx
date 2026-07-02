@@ -9,7 +9,7 @@ import{
 
 const TopBar = () => {
     return (
-        <div style={{
+        <div className="topbar-root" style={{
             background:"var(--wine-deep)",
             padding:"0 24px",
             height:"var(--topbar-height)",
@@ -22,29 +22,42 @@ const TopBar = () => {
             right:0,
             zIndex:1000
         }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
-        <a href="mailto:girijasam72@mail.com" style={{
+
+            <style>{`
+              @media (max-width: 1024px) {
+                .topbar-item-address { display: none !important; }
+              }
+              @media (max-width: 640px) {
+                .topbar-root { padding: 0 12px !important; }
+                .topbar-item-email { display: none !important; }
+                .topbar-item-tel-dup { display: none !important; }
+                .topbar-left { gap: 10px !important; }
+              }
+            `}</style>
+
+            <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+        <a className="topbar-item-email" href="mailto:girijasam72@mail.com" style={{
           display: 'flex', alignItems: 'center', gap: '5px',
           color: 'rgba(255,255,255,0.6)', fontSize: '11px',
         }}>
               <IconMail size={13} color="var(--gold)" />
           girijasam72@mail.com
         </a>
-        <a href="tel:+919744208752" style={{
+        <a className="topbar-item-tel-dup" href="tel:+919744208752" style={{
             display:"flex", alignItems:"center", gap:"5px",
             color:"rgba(255,255,255,0.6", fontSize:"11px"
         }}>
           <IconMail size={13} color="var(--gold)" />
           girijasam72@mail.com
         </a>
-        <a href="tel:+919744208752" style={{
+        <a className="topbar-item-tel" href="tel:+919744208752" style={{
           display: 'flex', alignItems: 'center', gap: '5px',
           color: 'rgba(255,255,255,0.6)', fontSize: '11px',
         }}>
           <IconPhone size={13} color="var(--gold)" />
           +91 97442 08752
         </a>
-        <span style={{
+        <span className="topbar-item-address" style={{
           display: 'flex', alignItems: 'center', gap: '5px',
           color: 'rgba(255,255,255,0.6)', fontSize: '11px',
         }}>
@@ -52,7 +65,7 @@ const TopBar = () => {
           Kottayam, Kerala
         </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div className="topbar-social" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <a href="#" style={{
           width: '22px', height: '22px',
           background: 'rgba(187,148,87,0.15)',
@@ -85,5 +98,3 @@ const TopBar = () => {
   )
 }
 export default TopBar
-
-    

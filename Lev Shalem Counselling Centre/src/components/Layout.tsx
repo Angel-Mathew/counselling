@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import TopBar from './TopBar'
 import Header from './Header'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -35,8 +36,13 @@ const Layout = () => {
           flex: 1,
           minWidth: 0,
           overflowX: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
         }}>
-          <Outlet />
+          <div style={{ flex: 1 }}>
+            <Outlet />
+          </div>
+          <Footer />
         </main>
 
       </div>

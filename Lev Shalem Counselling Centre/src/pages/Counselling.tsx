@@ -135,7 +135,7 @@ const Counselling = () => {
         </div>
       </div>
 
-      {/* 6. HOW TO BOOK SECTION */}
+      {/*  HOW TO BOOK SECTION */}
       <div style={{ maxWidth: '1100px', margin: '60px auto 0', padding: '0 20px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '30px' }}>
           <div style={{ height: '1px', flex: 1, background: '#e0d5c1' }} />

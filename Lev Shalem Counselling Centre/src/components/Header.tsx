@@ -7,7 +7,7 @@ toggleSidebar: () => void
 }
 const Header =({sidebarOpen, toggleSidebar}: HeaderProps) => {
   return (
-    <div style={{
+    <div className="header-root" style={{
         background: 'var(--wine)',
       padding: '0 20px',
       height: 'var(--header-height)',
@@ -22,7 +22,21 @@ const Header =({sidebarOpen, toggleSidebar}: HeaderProps) => {
       borderBottom: '3px solid var(--gold)',
       boxShadow: '0 4px 20px rgba(111, 28, 27, 0.87)',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .header-root { padding: 0 12px !important; }
+          .header-brand-text { display: none !important; }
+          .header-phone-block { display: none !important; }
+          .header-book-btn { padding: 10px 14px !important; font-size: 0 !important; gap: 0 !important; }
+          .header-book-btn svg { font-size: 16px !important; }
+        }
+        @media (max-width: 1024px) {
+          .header-phone-block { display: none !important; }
+        }
+      `}</style>
+
+      <div className="header-left" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <button onClick={toggleSidebar} style={{
           width: '36px',
             height: '36px',
@@ -55,7 +69,7 @@ const Header =({sidebarOpen, toggleSidebar}: HeaderProps) => {
               background: '#fff',
             }}
           />
-               <div>
+               <div className="header-brand-text">
             <div style={{
               color: '#fff',
               fontSize: '15px',
@@ -76,8 +90,8 @@ const Header =({sidebarOpen, toggleSidebar}: HeaderProps) => {
                 </div>
         </Link>
       </div>
-       <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-        <div style={{ textAlign: 'right' }}>
+       <div className="header-right" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <div className="header-phone-block" style={{ textAlign: 'right' }}>
           <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '9px' }}>
             Need help?
           </div>
@@ -91,12 +105,12 @@ const Header =({sidebarOpen, toggleSidebar}: HeaderProps) => {
           </a>
         </div>
 
-        <div style={{
+        <div className="header-phone-block" style={{
           width: '1px',
           height: '36px',
           background: 'rgba(255,255,255,0.2)',
         }} />
-         <Link to="/contact" style={{
+         <Link to="/contact" className="header-book-btn" style={{
           display: 'flex',
           alignItems: 'center',
           gap: '7px',
