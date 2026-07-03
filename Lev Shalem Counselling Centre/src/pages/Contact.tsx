@@ -14,10 +14,36 @@ const Contact = () => {
   return (
     <div style={{ background: 'var(--cream)' }}>
 
+      <style>{`
+        .ct-hero { padding: 32px; }
+        .ct-hero-desc { max-width: 500px; }
+        .ct-content { padding: 28px 32px; gap: 24px; }
+        .ct-top-row { grid-template-columns: 1fr 1fr; }
+        .ct-form-row { grid-template-columns: 1fr 1fr; }
+        .ct-form-actions { flex-direction: row; }
+
+        @media (max-width: 768px) {
+          .ct-top-row { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+          .ct-hero { padding: 24px 20px; }
+          .ct-content { padding: 20px 16px; gap: 16px; }
+          .ct-form-row { grid-template-columns: 1fr; gap: 16px !important; }
+          .ct-form-actions { flex-direction: column; align-items: stretch !important; }
+          .ct-form-actions button, .ct-form-actions a { box-sizing: border-box; }
+          .ct-form-actions button, .ct-form-actions a { justify-content: center; }
+        }
+
+        @media (min-width: 1440px) {
+          .ct-hero { padding: 48px 64px; }
+          .ct-hero-desc { max-width: 620px; }
+        }
+      `}</style>
+
       {/* PAGE HERO */}
-      <div style={{
+      <div className="ct-hero" style={{
         background: 'linear-gradient(135deg, var(--wine) 0%, #8B2320 100%)',
-        padding: '32px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -44,16 +70,16 @@ const Contact = () => {
             </h1>
           </div>
         </div>
-        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, maxWidth: '500px' }}>
+        <p className="ct-hero-desc" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7 }}>
           We'd love to hear from you. Reach out for counselling appointments,
           speaking engagements, course enquiries, or ministry partnerships.
         </p>
       </div>
 
-      <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div className="ct-content" style={{ display: 'flex', flexDirection: 'column' }}>
 
         {/* TOP ROW — Contact Info + Quick Actions */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="ct-top-row" style={{ display: 'grid', gap: '20px' }}>
 
           {/* CONTACT DETAILS */}
           <div style={{
@@ -193,7 +219,7 @@ const Contact = () => {
             </span>
           </div>
           <div style={{ padding: '24px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+            <div className="ct-form-row" style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
               <div>
                 <label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11px', fontWeight: 600, color: 'var(--wine)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   <IconUser size={12} /> Full Name
@@ -208,6 +234,7 @@ const Contact = () => {
                     color: 'var(--text)', outline: 'none',
                     fontFamily: 'inherit',
                     background: 'var(--cream)',
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -225,6 +252,7 @@ const Contact = () => {
                     color: 'var(--text)', outline: 'none',
                     fontFamily: 'inherit',
                     background: 'var(--cream)',
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -244,6 +272,7 @@ const Contact = () => {
                   color: 'var(--text)', outline: 'none',
                   fontFamily: 'inherit',
                   background: 'var(--cream)',
+                  boxSizing: 'border-box',
                 }}
               />
             </div>
@@ -259,6 +288,7 @@ const Contact = () => {
                 color: 'var(--text)', outline: 'none',
                 fontFamily: 'inherit',
                 background: 'var(--cream)',
+                boxSizing: 'border-box',
               }}>
                 <option value="">Select an enquiry type</option>
                 <option>Counselling Appointment</option>
@@ -284,11 +314,12 @@ const Contact = () => {
                   fontFamily: 'inherit',
                   background: 'var(--cream)',
                   resize: 'vertical',
+                  boxSizing: 'border-box',
                 }}
               />
             </div>
 
-            <div style={{ display: 'flex', gap: '10px' }}>
+            <div className="ct-form-actions" style={{ display: 'flex', gap: '10px' }}>
               <button style={{
                 display: 'flex', alignItems: 'center', gap: '7px',
                 background: 'var(--wine)', color: '#fff',

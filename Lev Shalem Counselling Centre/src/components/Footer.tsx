@@ -2,13 +2,33 @@ import { IconMail, IconPhone, IconMapPin, IconBrandWhatsappFilled, IconSend } fr
 
 const Footer = () => {
   return (
-    <footer style={{
+    <footer className="footer-root" style={{
       background: '#6f1d1b',
        boxShadow: '0 4px 20px rgba(111, 28, 27, 0.87)',
       padding: '48px 64px',
       color: '#fff',
     }}>
-      <div style={{
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .footer-root { padding: 40px 32px !important; }
+        }
+        @media (max-width: 640px) {
+          .footer-root { padding: 32px 20px !important; }
+          .footer-inner {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 32px !important;
+          }
+          .footer-actions {
+            min-width: 0 !important;
+            width: 100% !important;
+          }
+          .footer-title { font-size: 24px !important; }
+        }
+      `}</style>
+
+      <div className="footer-inner" style={{
         maxWidth: '1200px',
         margin: '0 auto',
         display: 'flex',
@@ -19,7 +39,7 @@ const Footer = () => {
         {/* Left Side: Text and Contact Info */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
           <div>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: "'Playfair Display', serif" }}>
+            <h2 className="footer-title" style={{ fontSize: '32px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: "'Playfair Display', serif" }}>
               Reach Out to Girija Varghese
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', margin: 0 }}>
@@ -44,7 +64,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side: Buttons */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', minWidth: '280px' }}>
+        <div className="footer-actions" style={{ display: 'flex', flexDirection: 'column', gap: '12px', minWidth: '280px' }}>
           <a href="mailto:girijasam72@mail.com" style={{
             display: 'flex',
             alignItems: 'center',

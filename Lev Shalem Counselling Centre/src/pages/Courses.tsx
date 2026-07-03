@@ -16,10 +16,46 @@ const Courses: React.FC = () => {
   ];
 
   return (
-    <div style={{ background: '#ffffff', minHeight: '100vh', padding: '60px 32px' }}>
+    <div style={{ background: '#ffffff', minHeight: '100vh' }}>
+
+      <style>{`
+        .crs-wrap { padding: 60px 32px; }
+        .crs-pill-row { max-width: 1100px; margin: 0 auto 40px; flex-direction: row; }
+        .crs-card { max-width: 1100px; margin: 0 auto; }
+        .crs-header { padding: 35px 45px; flex-direction: row; }
+        .crs-title { font-size: 32px; }
+        .crs-notices-grid { padding: 45px; grid-template-columns: repeat(3, 1fr); }
+        .crs-specs-bar { padding: 45px; grid-template-columns: repeat(4, 1fr); }
+        .crs-cta-row { padding: 0 45px 65px; flex-direction: row; }
+
+        @media (max-width: 1024px) {
+          .crs-notices-grid { grid-template-columns: repeat(2, 1fr); gap: 20px !important; }
+          .crs-specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 24px !important; }
+        }
+
+        @media (max-width: 640px) {
+          .crs-wrap { padding: 32px 16px; }
+          .crs-pill-row { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+          .crs-header { flex-direction: column; align-items: flex-start !important; gap: 16px; padding: 24px 20px; }
+          .crs-title { font-size: 22px; }
+          .crs-notices-grid { grid-template-columns: 1fr; padding: 24px 16px; gap: 20px; }
+          .crs-notices-grid img { height: 280px !important; }
+          .crs-specs-bar { grid-template-columns: 1fr 1fr; padding: 24px 16px; row-gap: 20px !important; }
+          .crs-specs-bar > div { border-right: none !important; }
+          .crs-cta-row { flex-direction: column; padding: 0 20px 40px; gap: 14px; }
+          .crs-cta-row a { box-sizing: border-box; }
+          .crs-cta-row a { padding-left: 0 !important; padding-right: 0 !important; justify-content: center; text-align: center; }
+        }
+
+        @media (min-width: 1440px) {
+          .crs-wrap { padding: 80px 32px; }
+          .crs-card { max-width: 1300px; }
+        }
+      `}</style>
       
       {/* SECTION PILL HEADER */}
-      <div style={{ maxWidth: '1100px', margin: '0 auto 40px', display: 'flex', alignItems: 'center', gap: '20px' }}>
+      <div className="crs-wrap">
+      <div className="crs-pill-row" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         <div style={{
           border: '1.5px solid #bb9457',
           padding: '10px 35px',
@@ -36,9 +72,7 @@ const Courses: React.FC = () => {
       </div>
 
       {/* MAIN COURSE CONTAINER */}
-      <div style={{ 
-        maxWidth: '1100px', 
-        margin: '0 auto', 
+      <div className="crs-card" style={{ 
         background: '#fff', 
         borderRadius: '16px', 
         overflow: 'hidden', 
@@ -47,9 +81,8 @@ const Courses: React.FC = () => {
       }}>
         
         {/* WINE COLORED HEADER */}
-        <div style={{ 
+        <div className="crs-header" style={{ 
           background: '#6f1d1b', 
-          padding: '35px 45px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center' 
@@ -58,7 +91,7 @@ const Courses: React.FC = () => {
             <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', fontWeight: 500, letterSpacing: '0.5px' }}>
               Covenant School of Theology and Counseling
             </div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#bb9457', fontSize: '32px', margin: '6px 0 0', fontWeight: 700 }}>
+            <h1 className="crs-title" style={{ fontFamily: "'Playfair Display', serif", color: '#bb9457', margin: '6px 0 0', fontWeight: 700 }}>
               Diploma in Life Skills and Counselling
             </h1>
           </div>
@@ -68,18 +101,16 @@ const Courses: React.FC = () => {
             padding: '12px 30px', 
             borderRadius: '30px', 
             fontWeight: 800, 
-            fontSize: '15px' 
+            fontSize: '15px',
+            whiteSpace: 'nowrap',
           }}>
             Admission Open
           </div>
         </div>
 
         {/* IMAGE NOTICES GRID */}
-        <div style={{ 
-          padding: '45px', 
+        <div className="crs-notices-grid" style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(3, 1fr)', 
-          gap: '28px', 
         }}>
           {courseNotices.map((notice) => (
             <div key={notice.id} style={{ 
@@ -124,10 +155,8 @@ const Courses: React.FC = () => {
         </div>
 
         {/* COURSE INFO SPECS BAR */}
-        <div style={{ 
+        <div className="crs-specs-bar" style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(4, 1fr)', 
-          padding: '45px',
           textAlign: 'center'
         }}>
           <div style={{ borderRight: '1.5px solid #e0d5c1' }}><div style={{ fontSize: '21px', fontWeight: 700, color: '#bb9457' }}>One Year</div></div>
@@ -137,7 +166,7 @@ const Courses: React.FC = () => {
         </div>
 
         {/* CALL TO ACTION BUTTONS */}
-        <div style={{ padding: '0 45px 65px', display: 'flex', justifyContent: 'center', gap: '20px' }}>
+        <div className="crs-cta-row" style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <a href="https://wa.me/919744208752" target="_blank" rel="noopener noreferrer" style={{
             background: '#6f1d1b',
             color: '#fff',
@@ -173,6 +202,7 @@ const Courses: React.FC = () => {
           </a>
         </div>
 
+      </div>
       </div>
     </div>
   );

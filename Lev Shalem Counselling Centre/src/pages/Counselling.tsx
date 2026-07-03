@@ -56,12 +56,45 @@ const Counselling = () => {
     ];
     return(
           <div style={{ background: '#fdfaf5', minHeight: '100vh', paddingBottom: '80px' }}>
+
+      <style>{`
+        .cns-hero { padding: 60px 40px; }
+        .cns-hero-title { font-size: 42px; }
+        .cns-hero-actions { flex-direction: row; }
+        .cns-info-box { margin: 40px auto; max-width: 1000px; }
+        .cns-services-grid { grid-template-columns: 1fr 1fr; max-width: 1100px; }
+        .cns-group-therapy { flex-direction: row; justify-content: space-between; padding: 25px; }
+        .cns-book-section { margin: 60px auto 0; max-width: 1100px; }
+        .cns-book-grid { grid-template-columns: repeat(4, 1fr); }
+
+        @media (max-width: 1024px) {
+          .cns-book-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+          .cns-hero { padding: 40px 20px; }
+          .cns-hero-title { font-size: 28px; }
+          .cns-logo-row { flex-direction: column; }
+          .cns-hero-actions { flex-direction: column; align-items: stretch !important; }
+          .cns-info-box { margin: 24px auto; padding: 16px !important; }
+          .cns-services-grid { grid-template-columns: 1fr; padding: 0 16px !important; gap: 16px !important; }
+          .cns-group-therapy { flex-direction: column; align-items: flex-start !important; gap: 20px; }
+          .cns-group-therapy .cns-gt-tags { justify-content: flex-start !important; }
+          .cns-book-section { margin: 40px auto 0; padding: 0 16px !important; }
+          .cns-book-grid { grid-template-columns: 1fr 1fr; gap: 12px !important; }
+        }
+
+        @media (min-width: 1440px) {
+          .cns-hero { padding: 80px 60px; }
+          .cns-services-grid { max-width: 1300px; }
+        }
+      `}</style>
       
       {/* 1. HERO SECTION */}
-     <div style={{ background: '#6f1d1b', padding: '60px 40px', textAlign: 'center', color: '#fff' }}>
+     <div className="cns-hero" style={{ background: '#6f1d1b', textAlign: 'center', color: '#fff' }}>
   
   {/* LOGO SECTION */}
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '20px' }}>
+  <div className="cns-logo-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '20px' }}>
     <img 
       src="/assets/logo.png" 
       alt="Lev Shalem Logo" 
@@ -78,15 +111,15 @@ const Counselling = () => {
   </div>
 
 
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '42px', margin: '0 0 20px 0' }}>Counselling Services</h1>
+        <h1 className="cns-hero-title" style={{ fontFamily: "'Playfair Display', serif", margin: '0 0 20px 0' }}>Counselling Services</h1>
         <p style={{ maxWidth: '800px', margin: '0 auto 30px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>
           Professional biblical counselling provided by <strong style={{color: '#bb9457'}}>Girija Varghese (Girija Sam)</strong> — M.S.W. (Medical & Psychiatric Social Work), B.D. — offering compassionate, Christ-centred support for individuals, families and communities.
         </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '15px' }}>
-          <button style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 24px', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="cns-hero-actions" style={{ display: 'flex', justifyContent: 'center', gap: '15px' }}>
+          <button style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 24px', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <IconCalendarEvent size={18}/> Book a Session
           </button>
-          <button style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', padding: '12px 24px', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <IconBrandWhatsapp size={18} color="#25D366"/> WhatsApp Us
           </button>
         </div>
@@ -94,13 +127,13 @@ const Counselling = () => {
       <div style={{background: "#bb9457",padding:"12px", textAlign:"center", color:"#fff", fontSize:"14px",fontStyle:"italic"}}>
         "Cast all your anxiety on him because he cares for you." — 1 Peter 5:7
       </div>
-       <div style={{ maxWidth: '1000px', margin: '40px auto', padding: '20px', border: '1px solid #e0d5c1', borderRadius: '8px', background: '#fff', display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
+       <div className="cns-info-box" style={{ padding: '20px', border: '1px solid #e0d5c1', borderRadius: '8px', background: '#fff', display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
         <IconInfoCircle size={24} color="#bb9457" style={{ flexShrink: 0 }} />
         <p style={{ margin: 0, fontSize: '14px', color: '#666', lineHeight: 1.6 }}>
           All counselling sessions are rooted in <strong>biblical truth</strong> and professional social work practice. Sessions are available <strong>in-person and online</strong>. Confidentiality is maintained at all times. Contact Girija Sam at <strong>+91 97442 08752</strong> to schedule.
         </p>
       </div>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', padding: '0 20px' }}>
+      <div className="cns-services-grid" style={{ margin: '0 auto', display: 'grid', gap: '24px', padding: '0 20px' }}>
         {services.map((s, i) => (
           <div key={i} style={{ background: '#fff', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
             <div style={{ background: '#6f1d1b', padding: '15px 20px', color: '#fff', display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -122,11 +155,11 @@ const Counselling = () => {
             <IconUsersGroup size={20} />
             <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Group Therapy <span style={{fontSize: '10px', background: '#bb9457', padding: '2px 8px', borderRadius: '10px', marginLeft: '10px', verticalAlign: 'middle'}}>New</span></h3>
           </div>
-          <div style={{ padding: '25px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '40px' }}>
+          <div className="cns-group-therapy" style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
             <p style={{ margin: 0, fontSize: '14.5px', color: '#555', lineHeight: 1.6, maxWidth: '600px' }}>
               A safe, supportive group environment where individuals walk through healing together — sharing experiences, growing in faith, and encouraging one another under guided professional facilitation.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'flex-end' }}>
+            <div className="cns-gt-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'flex-end' }}>
               {["Shared healing", "Community support", "Faith-based", "Facilitated sessions"].map(tag => (
                 <span key={tag} style={{ background: '#fdfaf5', border: '1px solid #eee', color: '#bb9457', padding: '4px 12px', borderRadius: '20px', fontSize: '12px' }}>{tag}</span>
               ))}
@@ -136,14 +169,14 @@ const Counselling = () => {
       </div>
 
       {/*  HOW TO BOOK SECTION */}
-      <div style={{ maxWidth: '1100px', margin: '60px auto 0', padding: '0 20px' }}>
+      <div className="cns-book-section" style={{ padding: '0 20px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '30px' }}>
           <div style={{ height: '1px', flex: 1, background: '#e0d5c1' }} />
           <span style={{ fontSize: '12px', color: '#bb9457', fontWeight: 600, textTransform: 'uppercase' }}>How to Book</span>
           <div style={{ height: '1px', flex: 1, background: '#e0d5c1' }} />
         </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+        <div className="cns-book-grid" style={{ display: 'grid', gap: '20px' }}>
           {[
             { step: 1, icon: <IconPhone size={24}/>, title: "Contact", text: "Call or Whatsapp +91 97442" },
             { step: 2, icon: <IconCalendarTime size={24}/>, title: "Schedule", text: "Choose a convenient date and time" },

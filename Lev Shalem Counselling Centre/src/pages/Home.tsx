@@ -13,19 +13,70 @@ import {
 const Home = () => {
   return (
     <div style={{ background: '#fff', minHeight: '100vh' }}>
-      
+
+      <style>{`
+        .home-hero { height: 480px; padding: 0 48px; }
+        .home-hero-title { font-size: 42px; }
+        .home-hero-tagline { font-size: 18px; }
+        .home-stats-grid { grid-template-columns: repeat(4, 1fr); }
+        .home-videos-section { padding: 32px 28px; }
+        .home-videos-grid { grid-template-columns: repeat(3, 1fr); }
+        .home-about-section { padding: 48px 32px; grid-template-columns: 1.2fr 1fr; }
+        .home-about-card-inner { flex-direction: row; padding: 32px; }
+        .home-counseling-tags { grid-template-columns: 1fr 1fr; }
+        .home-ministry-grid { grid-template-columns: 1fr 1fr 1fr; padding: 40px; }
+        .home-ministry-section { margin: 0 32px 48px; }
+        .home-enroll-section { margin: 0 32px 64px; }
+        .home-enroll-header { flex-direction: row; padding: 24px 40px; align-items: center; }
+        .home-enroll-grid { grid-template-columns: 1fr 1fr; padding: 40px; }
+
+        @media (max-width: 1024px) {
+          .home-hero { height: 420px; padding: 0 32px; }
+          .home-hero-title { font-size: 34px; }
+          .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .home-videos-grid { grid-template-columns: repeat(2, 1fr); }
+          .home-about-section { grid-template-columns: 1fr; padding: 32px 24px; }
+          .home-ministry-grid { grid-template-columns: 1fr 1fr; gap: 28px !important; }
+          .home-ministry-section { margin: 0 24px 40px; }
+          .home-enroll-grid { grid-template-columns: 1fr; }
+          .home-enroll-section { margin: 0 24px 48px; }
+        }
+
+        @media (max-width: 640px) {
+          .home-hero { height: 380px; padding: 0 20px; }
+          .home-hero-title { font-size: 26px; }
+          .home-hero-tagline { font-size: 14px; }
+          .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .home-videos-section { padding: 24px 16px; }
+          .home-videos-grid { grid-template-columns: 1fr; }
+          .home-about-section { padding: 24px 16px; gap: 16px !important; }
+          .home-about-card-inner { flex-direction: column; text-align: center; padding: 24px 16px; }
+          .home-counseling-tags { grid-template-columns: 1fr 1fr; }
+          .home-ministry-section { margin: 0 16px 32px; }
+          .home-ministry-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px !important; }
+          .home-enroll-section { margin: 0 16px 40px; }
+          .home-enroll-header { flex-direction: column; align-items: flex-start !important; gap: 16px; padding: 20px; }
+          .home-enroll-grid { grid-template-columns: 1fr; padding: 20px; gap: 24px !important; }
+        }
+
+        @media (min-width: 1440px) {
+          .home-hero { height: 560px; padding: 0 96px; }
+          .home-hero-title { font-size: 50px; }
+        }
+      `}</style>
+
       {/* HERO VIDEO SECTION */}
-      <div style={{ position: 'relative', width: '100%', height: '480px', overflow: 'hidden' }}>
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}>
+      <div className="home-hero" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7, position: 'absolute', inset: 0 }}>
           <source src="/assets/hero_section.mp4" type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(111,29,27,0.85) 0%, rgba(0,0,0,0.4) 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 48px' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
           <div style={{ maxWidth: '600px' }}>
-             <h1 style={{ color: '#fff', fontSize: '42px', fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
+             <h1 className="home-hero-title" style={{ color: '#fff', fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
                Girija Varghese <br/><span style={{ color: '#bb9457' }}>(Girija Sam)</span>
              </h1>
-             <p style={{ color: '#ccc', fontStyle: 'italic', marginBottom: '24px', fontSize: '18px' }}>"Healing Hearts • Building Lives • Inspiring Hope"</p>
+             <p className="home-hero-tagline" style={{ color: '#ccc', fontStyle: 'italic', marginBottom: '24px' }}>"Healing Hearts • Building Lives • Inspiring Hope"</p>
              <a href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20counselling%20session" target="_blank" rel="noreferrer" style={{ background: '#bb9457', color: '#fff', padding: '14px 28px', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                <IconCalendarPlus size={20}/> Book Counselling
              </a>
@@ -42,14 +93,14 @@ const Home = () => {
       </div>
 
       {/* STATS SECTION */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderBottom: '1px solid #eee' }}>
+      <div className="home-stats-grid" style={{ display: 'grid', borderBottom: '1px solid #eee' }}>
         {[
           { num: '33+', label: 'Years of Ministry' },
           { num: '17', label: 'Power Vision Episodes' },
           { num: '10+', label: 'Theological Colleges' },
           { num: '7', label: 'Counselling Services' },
         ].map((stat, i) => (
-          <div key={i} style={{ padding: '24px', textAlign: 'center', borderRight: i < 3 ? '1px solid #eee' : 'none' }}>
+          <div key={i} style={{ padding: '24px', textAlign: 'center', borderRight: (i + 1) % 2 !== 0 ? '1px solid #eee' : 'none', borderBottom: '1px solid #eee' }}>
             <div style={{ fontSize: '32px', fontWeight: 700, color: '#6f1d1b' }}>{stat.num}</div>
             <div style={{ fontSize: '12px', color: '#666', fontWeight: 500 }}>{stat.label}</div>
           </div>
@@ -57,16 +108,16 @@ const Home = () => {
       </div>
 
       {/* RESTORED LATEST MESSAGES SECTION */}
-      <div style={{ padding: '32px 28px', background: '#fdfaf5' }}>
+      <div className="home-videos-section" style={{ background: '#fdfaf5' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', color: '#6f1d1b', fontWeight: 600 }}>Latest Messages</h2>
           <div style={{ flex: 1, height: '1px', background: '#eee' }} />
-          <a href="https://youtu.be/MIjrvKjKJWY?si=lhmsMKPoSjaL-BwP" target="_blank" rel="noreferrer" style={{ color: '#bb9457', fontSize: '13px', fontWeight: 500, textDecoration: 'none' }}>
+          <a href="https://youtu.be/MIjrvKjKJWY?si=lhmsMKPoSjaL-BwP" target="_blank" rel="noreferrer" style={{ color: '#bb9457', fontSize: '13px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap' }}>
             View all →
           </a>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+        <div className="home-videos-grid" style={{ display: 'grid', gap: '16px' }}>
           {[
             { title: 'Role of Women in Family', sub: 'Power Vision TV · Ep. 1' },
             { title: 'Bible Teaching Message', sub: 'Bible Teaching Series' },
@@ -115,12 +166,12 @@ const Home = () => {
         </div>
       </div>
 
-      {/* ABOUT & COUNSELING SECTION */}
-      <div style={{ padding: '48px 32px', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px' }}>
+      {/* 5. ABOUT & COUNSELING SECTION */}
+      <div className="home-about-section" style={{ display: 'grid', gap: '24px' }}>
         <div style={{ border: '2px solid #bb9457', borderRadius: '12px', overflow: 'hidden' }}>
           <div style={{ background: '#6f1d1b', padding: '12px', textAlign: 'center', color: '#fff', fontWeight: 600 }}>About GIRIJA VARGHESE</div>
-          <div style={{ padding: '32px', display: 'flex', gap: '24px' }}>
-            <img src="/assets/profile.png" alt="Girija" style={{ width: '120px', height: '150px', borderRadius: '8px', objectFit: 'cover' }} />
+          <div className="home-about-card-inner" style={{ display: 'flex', gap: '24px' }}>
+            <img src="/assets/profile.png" alt="Girija" style={{ width: '120px', height: '150px', borderRadius: '8px', objectFit: 'cover', flexShrink: 0 }} />
             <div>
               <h3 style={{ color: '#6f1d1b', fontSize: '22px', margin: '0 0 10px 0' }}>Counselor · Teacher · Speaker</h3>
               <p style={{ color: '#444', lineHeight: 1.6 }}>
@@ -134,7 +185,7 @@ const Home = () => {
         <div style={{ border: '2px solid #6f1d1b', borderRadius: '20px', overflow: 'hidden' }}>
           <div style={{ background: '#bb9457', padding: '12px', textAlign: 'center', color: '#fff', fontWeight: 600 }}>Counseling Services</div>
           <div style={{ padding: '32px', textAlign: 'center' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px' }}>
+            <div className="home-counseling-tags" style={{ display: 'grid', gap: '10px', marginBottom: '20px' }}>
               {['Individual', 'Family', 'Marriage', 'Youth', "Women's", 'Wellness'].map(s => (
                 <div key={s} style={{ background: '#6f1d1b', color: '#fff', padding: '10px', borderRadius: '6px', fontSize: '13px' }}>{s}</div>
               ))}
@@ -151,12 +202,12 @@ const Home = () => {
         </div>
       </div>
 
-      {/*  MINISTRY, TEACHING & SPEAKING */}
-      <div style={{ margin: '0 32px 48px', border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden', background: '#fff' }}>
+      {/* 6. MINISTRY, TEACHING & SPEAKING */}
+      <div className="home-ministry-section" style={{ border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden', background: '#fff' }}>
         <div style={{ background: '#6f1d1b', padding: '16px', textAlign: 'center', color: '#fff', fontWeight: 600, fontSize: '18px' }}>
           Ministry, Teaching & Speaking
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '40px', padding: '40px' }}>
+        <div className="home-ministry-grid" style={{ display: 'grid', gap: '40px' }}>
           <div>
             <h4 style={{ color: '#bb9457', borderBottom: '1px solid #eee', paddingBottom: '8px', marginBottom: '15px' }}>Teaching</h4>
             <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px', lineHeight: 1.7, color: '#444' }}>
@@ -178,17 +229,17 @@ const Home = () => {
         </div>
       </div>
 
-      {/*  NOW ENROLLING */}
-      <div style={{ margin: '0 32px 64px', border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden' }}>
-        <div style={{ background: '#6f1d1b', padding: '24px 40px', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      {/* 7. NOW ENROLLING */}
+      <div className="home-enroll-section" style={{ border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden' }}>
+        <div className="home-enroll-header" style={{ background: '#6f1d1b', color: '#fff', display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <h2 style={{ color: '#bb9457', margin: 0, fontSize: '24px' }}>Now Enrolling</h2>
             <h3 style={{ margin: '8px 0', fontSize: '20px' }}>Diploma in Life Skills and Counselling</h3>
             <p style={{ margin: 0, opacity: 0.8 }}>One Year · Online (Zoom) · For Men & Women</p>
           </div>
-          <button style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 32px', borderRadius: '25px', fontWeight: 700 }}>Start on July</button>
+          <button style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 32px', borderRadius: '25px', fontWeight: 700, whiteSpace: 'nowrap' }}>Start on July</button>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '40px', gap: '40px' }}>
+        <div className="home-enroll-grid" style={{ display: 'grid' }}>
           <div>
             <h4 style={{ color: '#6f1d1b', borderBottom: '1px solid #bb9457', paddingBottom: '8px', marginBottom: '16px' }}>Schedule</h4>
             <p style={{ color: '#bb9457', fontWeight: 700, marginBottom: '10px' }}>1st & 3rd Sundays monthly</p>

@@ -13,10 +13,38 @@ const BibleTeaching = () => {
   return (
     <div style={{ background: 'var(--cream)' }}>
 
+  <style>{`
+        .bt-hero { padding: 32px; }
+        .bt-hero-desc { max-width: 520px; }
+        .bt-content { padding: 28px 32px; gap: 24px; }
+        .bt-colleges-grid { grid-template-columns: 1fr 1fr; }
+        .bt-speaking-grid { grid-template-columns: repeat(3, 1fr); }
+        .bt-cta { flex-direction: row; padding: 24px 28px; }
+        .bt-cta-actions { align-items: flex-end; }
+ 
+        @media (max-width: 1024px) {
+          .bt-speaking-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+ 
+        @media (max-width: 640px) {
+          .bt-hero { padding: 24px 20px; }
+          .bt-hero-actions { flex-direction: column; align-items: stretch !important; }
+          .bt-content { padding: 20px 16px; gap: 16px; }
+          .bt-colleges-grid { grid-template-columns: 1fr; }
+          .bt-speaking-grid { grid-template-columns: 1fr; }
+          .bt-cta { flex-direction: column; align-items: flex-start !important; gap: 20px; padding: 20px; }
+          .bt-cta-actions { align-items: flex-start; width: 100%; }
+          .bt-cta-actions a { width: 100%; justify-content: center; box-sizing: border-box; }
+        }
+ 
+        @media (min-width: 1440px) {
+          .bt-hero { padding: 48px 64px; }
+          .bt-hero-desc { max-width: 640px; }
+        }
+      `}</style>
       {/* PAGE HERO */}
-      <div style={{
+      <div className="bt-hero" style={{
         background: 'linear-gradient(135deg, var(--wine) 0%, #8B2320 100%)',
-        padding: '32px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -45,18 +73,18 @@ const BibleTeaching = () => {
           </div>
         </div>
 
-        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, maxWidth: '520px', marginBottom: '16px' }}>
+        <p className="bt-hero-desc" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, marginBottom: '16px' }}>
           With over <strong style={{ color: 'rgba(255,255,255,0.85)' }}>33 years of ministry</strong>, Girija Varghese
           has taught God's Word across multiple Bible colleges, seminaries, and conferences in Kerala and beyond.
         </p>
 
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div className="bt-hero-actions" style={{ display: 'flex', gap: '10px' }}>
           <a
             href="https://youtu.be/dogsMpB16gU?si=XL5VFNtBZ9Ck23-_"
             target="_blank"
             rel="noreferrer"
             style={{
-              display: 'flex', alignItems: 'center', gap: '7px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '7px',
               background: 'var(--gold)', color: '#fff',
               fontSize: '12px', fontWeight: 600,
               padding: '9px 18px', borderRadius: '6px',
@@ -69,7 +97,7 @@ const BibleTeaching = () => {
           <a
             href="/contact"
             style={{
-              display: 'flex', alignItems: 'center', gap: '7px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '7px',
               border: '1.5px solid rgba(255,255,255,0.3)',
               color: '#fff', fontSize: '12px',
               padding: '9px 18px', borderRadius: '6px',
@@ -81,7 +109,7 @@ const BibleTeaching = () => {
         </div>
       </div>
 
-      <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div className="bt-content" style={{ display: 'flex', flexDirection: 'column' }}>
 
        
         
@@ -102,7 +130,7 @@ const BibleTeaching = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 600, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '12px' }}>
               <IconStar size={12} /> Currently Teaching
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px' }}>
+            <div className="bt-colleges-grid" style={{ display: 'grid', gap: '10px', marginBottom: '20px' }}>
               {[
                 { name: 'Zion Bible College', loc: 'Mallappally', badge: '', color: '' },
                 { name: 'Doulos Theological Seminary', loc: 'Tiruvalla', badge: '', color: '' },
@@ -140,7 +168,7 @@ const BibleTeaching = () => {
             <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '12px' }}>
               Former Faculty
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+            <div className="bt-colleges-grid" style={{ display: 'grid', gap: '10px' }}>
               {[
                 { name: 'Reach Out Theological Seminary', loc: 'Velloor' },
                 { name: 'Asian Bible College', loc: 'Palarivattom' },
@@ -184,7 +212,7 @@ const BibleTeaching = () => {
             </span>
           </div>
           <div style={{ padding: '20px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+            <div className="bt-speaking-grid" style={{ display: 'grid', gap: '10px' }}>
               {[
                 { icon: <IconUsers size={22} />, label: "Women's Meetings", desc: "Biblical teaching for women's conferences" },
                 { icon: <IconUsers size={22} />, label: 'Family Seminars', desc: "Strengthening families through God's Word" },
@@ -208,10 +236,9 @@ const BibleTeaching = () => {
         </div>
 
         {/* INVITE CTA */}
-        <div style={{
+        <div className="bt-cta" style={{
           background: 'var(--wine)', borderRadius: '12px',
-          padding: '24px 28px',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          display: 'flex', justifyContent: 'space-between',
           boxShadow: '0 4px 20px rgba(111,29,27,0.2)',
         }}>
           <div>
@@ -223,11 +250,11 @@ const BibleTeaching = () => {
               youth conferences, family seminars and life skills programs.
             </p>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'flex-end' }}>
+          <div className="bt-cta-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <a
               href="mailto:girijasam72@mail.com"
               style={{
-                display: 'flex', alignItems: 'center', gap: '7px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '7px',
                 background: 'var(--gold)', color: '#fff',
                 fontSize: '12px', fontWeight: 600,
                 padding: '10px 20px', borderRadius: '6px',
@@ -240,7 +267,7 @@ const BibleTeaching = () => {
             <a
               href="https://wa.me/919744208752"
               style={{
-                display: 'flex', alignItems: 'center', gap: '7px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '7px',
                 background: 'rgba(37,211,102,0.15)',
                 border: '1.5px solid rgba(37,211,102,0.4)',
                 color: '#25D366', fontSize: '12px', fontWeight: 600,

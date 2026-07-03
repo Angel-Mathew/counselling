@@ -15,9 +15,39 @@ import {
 const About = () => {
     return(
         <div style={{background:'var(--cream)'}}>
-         <div style={{
+
+          <style>{`
+            .about-hero { padding: 36px 32px; }
+            .about-hero-img { width: 150px; height: 150px; }
+            .about-hero-title { font-size: 28px; }
+            .about-qualifications-grid { grid-template-columns: 1fr 1fr; }
+            .about-teaching-grid { grid-template-columns: 1fr 1fr; }
+            .about-ministry-grid { grid-template-columns: repeat(4, 1fr); }
+
+            @media (max-width: 1024px) {
+              .about-ministry-grid { grid-template-columns: repeat(2, 1fr); }
+            }
+
+            @media (max-width: 640px) {
+              .about-hero { padding: 24px 20px; }
+              .about-hero-img { width: 100px; height: 100px; }
+              .about-hero-title { font-size: 22px; }
+              .about-qualifications-grid { grid-template-columns: 1fr; }
+              .about-teaching-grid { grid-template-columns: 1fr; }
+              .about-ministry-grid { grid-template-columns: 1fr 1fr; }
+            }
+
+            @media (max-width: 340px) {
+              .about-ministry-grid { grid-template-columns: 1fr; }
+            }
+
+            @media (min-width: 1440px) {
+              .about-hero { padding: 48px 64px; }
+            }
+          `}</style>
+
+         <div className="about-hero" style={{
         background: 'linear-gradient(135deg, var(--wine) 0%, #8B2320 100%)',
-        padding: '36px 32px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -27,11 +57,10 @@ const About = () => {
           background: 'rgba(187,148,87,0.06)',
         }} />
            <img
+            className="about-hero-img"
             src="/assets/profile.png"
             alt="Girija Varghese"
             style={{
-              width: '150px', 
-              height: '150px',
               borderRadius: '80%',
               border: '3px solid var(--gold)',
               objectFit: 'cover',
@@ -43,9 +72,9 @@ const About = () => {
           <div>
             <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '4px',marginTop:'10px' }}>
               Lev Shalem Counselling Centre
-        <h1 style={{
+        <h1 className="about-hero-title" style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: '28px', fontWeight: 700,
+              fontWeight: 700,
               color: '#fff', lineHeight: 1.2, marginBottom: '4px',
             }}>
                 Girija Varghese
@@ -128,7 +157,7 @@ const About = () => {
               Qualifications
             </span>
           </div>
-          <div style={{ padding: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div className="about-qualifications-grid" style={{ padding: '20px', display: 'grid', gap: '12px' }}>
             {[
               { short: 'B.A.', full: 'Bachelor of Arts' },
               { short: 'M.S.W.', full: 'Master of Social Work — Medical & Psychiatric Social Work' },
@@ -184,7 +213,7 @@ const About = () => {
                 <IconStar size={12} />
                 Currently Teaching
               </div>
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+               <div className="about-teaching-grid" style={{ display: 'grid', gap: '8px' }}>
                 {[
                   { name: 'Zion Bible College', loc: 'Mallappally', status: 'Current' },
                   { name: 'Doulos Theological Seminary', loc: 'Tiruvalla', status: 'Current' },
@@ -227,7 +256,7 @@ const About = () => {
               }}>
                 Former Faculty
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              <div className="about-teaching-grid" style={{ display: 'grid', gap: '8px' }}>
                 {[
                   { name: 'Reach Out Theological Seminary', loc: 'Velloor' },
                   { name: 'Asian Bible College', loc: 'Palarivattom' },
@@ -278,7 +307,7 @@ const About = () => {
               Ministry Experience — 33+ Years with Rev. K. K. Sam
             </span>
           </div>
-          <div style={{ padding: '20px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+          <div className="about-ministry-grid" style={{ padding: '20px', display: 'grid', gap: '10px' }}>
             {[
               { icon: <IconBook2 size={22} />, label: 'Bible Teaching' },
               { icon: <IconHeartHandshake size={22} />, label: 'Christian Counselling' },
@@ -311,4 +340,3 @@ const About = () => {
 }
 
 export default About
-

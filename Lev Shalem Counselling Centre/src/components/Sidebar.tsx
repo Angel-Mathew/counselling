@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
   const location = useLocation()
 
   return (
-    <div style={{
+    <div className={isOpen ? 'sidebar-root sidebar-open' : 'sidebar-root sidebar-closed'} style={{
       width: isOpen ? 'var(--sidebar-width)' : '0',
       minWidth: isOpen ? 'var(--sidebar-width)' : '0',
       background: 'var(--wine-dark)',
@@ -81,6 +81,40 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       alignSelf: 'flex-start',
       maxHeight: 'calc(100vh - var(--topbar-height) - var(--header-height))',
     }}>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .sidebar-open {
+            position: fixed !important;
+            top: calc(var(--topbar-height) + var(--header-height)) !important;
+            left: 0 !important;
+            width: 240px !important;
+            min-width: 240px !important;
+            height: calc(100vh - var(--topbar-height) - var(--header-height)) !important;
+            z-index: 1000 !important;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.35) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .sidebar-open {
+            width: 82vw !important;
+            min-width: 82vw !important;
+          }
+        }
+        @media (max-width: 400px) {
+          .sidebar-open {
+            width: 240px !important;
+            min-width: 240px !important;
+          }
+        }
+        @media (max-width: 340px) {
+          .sidebar-open {
+            width: 210px !important;
+            min-width: 210px !important;
+          }
+          .sidebar-scroll img { width: 48px !important; height: 48px !important; }
+        }
+      `}</style>
 
      <div className="sidebar-scroll" style={{ overflowY: 'auto', flex: 1 }}>
 
