@@ -3,7 +3,6 @@ import {
   IconSchool,
   IconMapPin,
   IconPlayerPlay,
-  IconBrandYoutube,
   IconStar,
   IconUsers,
   IconMicrophone2,

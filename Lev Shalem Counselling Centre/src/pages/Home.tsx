@@ -1,14 +1,12 @@
 import { 
-  IconPlayerPlay, 
-  IconCalendarPlus, 
-  IconBrandWhatsapp, 
+  IconPlayerPlay,
+  IconCalendarPlus,
   IconBrandYoutube,
   IconClock,
   IconCreditCard,
-  IconSchool,
-  IconMicrophone2, 
-  IconUsers 
 } from '@tabler/icons-react';
+
+
 
 const Home = () => {
   return (

@@ -4,13 +4,11 @@ import {
   IconHeartHandshake,
   IconSchool,
   IconMapPin,
-  IconPhone,
-  IconMail,
-  IconBrandWhatsappFilled,
   IconBook2,
   IconUsers,
   IconStar,
 } from '@tabler/icons-react'
+
 
 const About = () => {
     return(
