@@ -82,39 +82,36 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       maxHeight: 'calc(100vh - var(--topbar-height) - var(--header-height))',
     }}>
 
-      <style>{`
-        @media (max-width: 1024px) {
-          .sidebar-open {
-            position: fixed !important;
-            top: calc(var(--topbar-height) + var(--header-height)) !important;
-            left: 0 !important;
-            width: 240px !important;
-            min-width: 240px !important;
-            height: calc(100vh - var(--topbar-height) - var(--header-height)) !important;
-            z-index: 1000 !important;
-            box-shadow: 4px 0 24px rgba(0,0,0,0.35) !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .sidebar-open {
-            width: 82vw !important;
-            min-width: 82vw !important;
-          }
-        }
-        @media (max-width: 400px) {
-          .sidebar-open {
-            width: 240px !important;
-            min-width: 240px !important;
-          }
-        }
-        @media (max-width: 340px) {
-          .sidebar-open {
-            width: 210px !important;
-            min-width: 210px !important;
-          }
-          .sidebar-scroll img { width: 48px !important; height: 48px !important; }
-        }
-      `}</style>
+     <style>{`
+  @media (max-width: 1024px) {
+    .sidebar-open {
+      position: fixed !important;
+      top: calc(var(--topbar-height) + var(--header-height)) !important;
+      left: 0 !important;
+      width: 200px !important;
+      min-width: 200px !important;
+      height: calc(100vh - var(--topbar-height) - var(--header-height)) !important;
+      z-index: 1000 !important;
+      box-shadow: 4px 0 24px rgba(0,0,0,0.35) !important;
+    }
+  }
+  @media (max-width: 640px) {
+    .sidebar-open {
+      width: 175px !important;
+      min-width: 175px !important;
+    }
+    .sidebar-scroll img { width: 52px !important; height: 52px !important; }
+  }
+  @media (max-width: 340px) {
+    .sidebar-open {
+      width: 155px !important;
+      min-width: 155px !important;
+    }
+    .sidebar-scroll img { width: 44px !important; height: 44px !important; }
+  }
+`}</style>
+
+
 
      <div className="sidebar-scroll" style={{ overflowY: 'auto', flex: 1 }}>
 

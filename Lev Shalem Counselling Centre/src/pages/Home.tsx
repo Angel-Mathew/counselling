@@ -71,11 +71,11 @@ const Home = () => {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(111,29,27,0.85) 0%, rgba(0,0,0,0.4) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
           <div style={{ maxWidth: '600px' }}>
-             <h1 className="home-hero-title" style={{ color: '#fff', fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
+             <h1 className="home-hero-title" style={{ color: '#fff', fontFamily: "'Playfair Display', serif", fontWeight: 700, marginLeft:"20px" }}>
                Girija Varghese <br/><span style={{ color: '#bb9457' }}>(Girija Sam)</span>
              </h1>
-             <p className="home-hero-tagline" style={{ color: '#ccc', fontStyle: 'italic', marginBottom: '24px' }}>"Healing Hearts • Building Lives • Inspiring Hope"</p>
-             <a href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20counselling%20session" target="_blank" rel="noreferrer" style={{ background: '#bb9457', color: '#fff', padding: '14px 28px', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+             <p className="home-hero-tagline" style={{ color: '#ccc', fontStyle: 'italic', marginBottom: '24px',marginLeft:"20px" }}>"Healing Hearts • Building Lives • Inspiring Hope"</p>
+             <a href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20counselling%20session" style={{ background: '#bb9457', color: '#fff', padding: '14px 28px', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600, marginLeft:"20px" }}>
                <IconCalendarPlus size={20}/> Book Counselling
              </a>
           </div>
@@ -117,54 +117,66 @@ const Home = () => {
 
         <div className="home-videos-grid" style={{ display: 'grid', gap: '16px' }}>
           {[
-            { title: 'Role of Women in Family', sub: 'Power Vision TV · Ep. 1' },
-            { title: 'Bible Teaching Message', sub: 'Bible Teaching Series' },
-            { title: "Women's Conference Talk", sub: "Women's Ministry" },
+            { title: 'Ladies Only', sub: 'Power Vision TV ', id: 'g2RjQCQuAfA' },
+            { title: 'UP - LPF, PALAKKAD MEETING', sub: 'Living Way TV', id: 'U9i_4Cj58k4' },
+            { title: "UP - LPF, PALAKKAD MEETING", sub: "Living Way TV", id: 'gktnJHFq-ic' },
           ].map((video, i) => (
-            <div key={i} style={{
-              background: '#fff',
-              borderRadius: '10px',
-              border: '0.5px solid #eee',
-              overflow: 'hidden',
-              boxShadow: '0 2px 8px rgba(111,29,27,0.06)',
-            }}>
+            <a
+              key={i}
+              href={`https://youtu.be/${video.id}`}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                background: '#fff',
+                borderRadius: '10px',
+                border: '0.5px solid #eee',
+                overflow: 'hidden',
+                boxShadow: '0 2px 8px rgba(111,29,27,0.06)',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'block',
+              }}
+            >
               <div style={{
-                background: 'linear-gradient(135deg, #1a0a09, #2a1210)',
+                position: 'relative',
                 aspectRatio: '16/9',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                cursor: 'pointer',
+                background: '#1a0a09',
               }}>
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  alt={video.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
                 <div style={{
-                  width: '40px', height: '40px',
-                  background: '#bb9457',
-                  borderRadius: '50%',
+                  position: 'absolute', inset: 0,
+                  background: 'rgba(0,0,0,0.25)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
-                  <IconPlayerPlay size={18} color="#fff" style={{ marginLeft: '3px' }} />
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(187,148,87,0.7)', fontSize: '11px' }}>
-                  <IconBrandYoutube size={14} />
-                  YouTube
+                  <div style={{
+                    width: '40px', height: '40px',
+                    background: '#bb9457',
+                    borderRadius: '50%',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <IconPlayerPlay size={18} color="#fff" style={{ marginLeft: '3px' }} />
+                  </div>
                 </div>
               </div>
               <div style={{ padding: '12px 14px' }}>
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#6f1d1b', marginBottom: '3px' }}>
                   {video.title}
                 </div>
-                <div style={{ fontSize: '11px', color: '#666' }}>
+                <div style={{ fontSize: '11px', color: '#666', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <IconBrandYoutube size={12} color="#bb9457" />
                   {video.sub}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
 
-      {/* 5. ABOUT & COUNSELING SECTION */}
+      {/*  ABOUT & COUNSELING SECTION */}
       <div className="home-about-section" style={{ display: 'grid', gap: '24px' }}>
         <div style={{ border: '2px solid #bb9457', borderRadius: '12px', overflow: 'hidden' }}>
           <div style={{ background: '#6f1d1b', padding: '12px', textAlign: 'center', color: '#fff', fontWeight: 600 }}>About GIRIJA VARGHESE</div>
@@ -174,7 +186,7 @@ const Home = () => {
               <h3 style={{ color: '#6f1d1b', fontSize: '22px', margin: '0 0 10px 0' }}>Counselor · Teacher · Speaker</h3>
               <p style={{ color: '#444', lineHeight: 1.6 }}>
                 B.A. · M.S.W. · B.D. · L.Th. <br />
-                Serving alongside Rev. K. K. Sam for over 33 years in Biblical counseling and theological education.
+                Serving alongside Pastor K. K. Sam for over 33 years in Biblical counseling and theological education.
               </p>
             </div>
           </div>
@@ -190,8 +202,6 @@ const Home = () => {
             </div>
             <a 
               href="https://wa.me/919744208752?text=I%20want%20to%20book%20a%20session" 
-              target="_blank" 
-              rel="noreferrer" 
               style={{ background: '#bb9457', color: '#fff', border: 'none', padding: '12px 32px', borderRadius: '25px', fontWeight: 700, cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}
             >
               Book a session
@@ -227,7 +237,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 7. NOW ENROLLING */}
+      {/*  NOW ENROLLING */}
       <div className="home-enroll-section" style={{ border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden' }}>
         <div className="home-enroll-header" style={{ background: '#6f1d1b', color: '#fff', display: 'flex', justifyContent: 'space-between' }}>
           <div>
@@ -245,8 +255,8 @@ const Home = () => {
             <div style={{ color: '#666', display: 'flex', gap: '8px' }}><IconCreditCard size={18}/> Installment options available</div>
           </div>
           <div style={{ background: '#bb955784', border: '2px dashed #bb9457', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '20px' }}>
-            <a href="https://wa.me/919744208752?text=I%20want%20details%20about%20the%20Diploma%20Course%20Fee%20Structure" target="_blank" rel="noreferrer" style={{ color: '#6f1d1b', fontWeight: 600, textDecoration: 'none' }}>
-              Fee structure and registration details provided upon enquiry.
+            <a href="https://wa.me/919744208752?text=I%20want%20details%20about%20the%20Diploma%20Course%20Fee%20Structure" style={{ color: '#6f1d1b', fontWeight: 600, textDecoration: 'none' }}>
+             Click here to contact us on WhatsApp for fee structure and registration details.
             </a>
           </div>
         </div>
