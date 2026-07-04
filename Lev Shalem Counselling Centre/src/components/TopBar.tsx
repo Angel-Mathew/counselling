@@ -47,13 +47,7 @@ const TopBar = () => {
             display:"flex", alignItems:"center", gap:"5px",
             color:"rgba(255,255,255,0.6", fontSize:"11px"
         }}>
-          <IconMail size={13} color="var(--gold)" />
-          girijasam72@mail.com
-        </a>
-        <a className="topbar-item-tel" href="tel:+919744208752" style={{
-          display: 'flex', alignItems: 'center', gap: '5px',
-          color: 'rgba(255,255,255,0.6)', fontSize: '11px',
-        }}>
+          
           <IconPhone size={13} color="var(--gold)" />
           +91 97442 08752
         </a>

@@ -172,7 +172,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
             ].map((item: { icon: React.ReactNode; text: string }, i: number) => (
               <div key={i} style={{ display: 'flex', gap: '6px', alignItems: 'flex-start' }}>
                 <span style={{ marginTop: '1px', flexShrink: 0 }}>{item.icon}</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '9.5px', lineHeight: 1.5 }}>
+                <span style={{ color: 'rgba(255, 255, 255, 0.81)', fontSize: '10px', lineHeight: 1.5 }}>
                   {item.text}
                 </span>
               </div>
@@ -183,9 +183,9 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
         {/* NAV */}
         <div style={{ padding: '8px 6px' }}>
           <div style={{
-            fontSize: '8px', fontWeight: 600,
+            fontSize: '10px', fontWeight: 600,
             textTransform: 'uppercase', letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.25)', padding: '8px 8px 4px',
+            color: 'rgba(255, 255, 255, 0.98)', padding: '8px 8px 4px',
           }}>
             Main Menu
           </div>
@@ -248,7 +248,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
             padding: '11px 10px',
           }}>
             <div style={{
-              color: 'var(--gold)', fontSize: '8.5px', fontWeight: 600,
+              color: 'var(--gold)', fontSize: '9px', fontWeight: 600,
               textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px',
             }}>
               Quick Contact

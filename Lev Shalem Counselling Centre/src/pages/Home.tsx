@@ -65,7 +65,7 @@ const Home = () => {
 
       {/* HERO VIDEO SECTION */}
       <div className="home-hero" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7, position: 'absolute', inset: 0 }}>
+        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 8, position: 'absolute', inset: 0 }}>
           <source src="/assets/hero_section.mp4" type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(111,29,27,0.85) 0%, rgba(0,0,0,0.4) 100%)' }} />

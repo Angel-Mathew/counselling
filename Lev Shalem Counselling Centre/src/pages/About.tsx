@@ -215,7 +215,7 @@ const About = () => {
                 {[
                   { name: 'Zion Bible College', loc: 'Mallappally', status: 'Current' },
                   { name: 'Doulos Theological Seminary', loc: 'Tiruvalla', status: 'Current' },
-                  { name: 'Peniel Bible School & Counselling Institute', loc: 'Kottayam', status: 'Present' },
+                  { name: 'Peniel Bible School & Counselling Institute', loc: 'Kottayam', status: 'Current' },
                   { name: 'Jesus & Friends College and Seminary', loc: 'Kulakkada (Online)', status: 'Current' },
                 ].map((t, i) => (
                   <div key={i} style={{
