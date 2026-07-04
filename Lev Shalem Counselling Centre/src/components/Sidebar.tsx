@@ -32,31 +32,19 @@ const navItems: NavItem[] = [
     path: '/about',
     label: 'About',
     icon: <IconUser size={16} />,
-    sub: ['· Biography', '· Qualifications', '· With Rev. K. K. Sam'],
+    
   },
   {
     path: '/counselling',
     label: 'Counselling',
     icon: <IconHeartHandshake size={16} />,
-    sub: [
-      '· Individual',
-      '· Family & Marriage',
-      "· Youth & Women's",
-      '· Pre-marital',
-      '· Emotional Wellness',
-      '· Addiction',
-      '· Group Therapy',
-    ],
+   
   },
   {
     path: '/bible-teaching',
     label: 'Bible Teaching',
     icon: <IconBook2 size={16} />,
-    sub: [
-      '· Sermons & Messages',
-      '· Bible Colleges',
-      "· Women's Seminars",
-    ],
+   
   },
   { path: '/courses', label: 'Courses', icon: <IconCertificate size={16} /> },
   { path: '/contact', label: 'Contact', icon: <IconMail size={16} /> },

@@ -254,11 +254,9 @@ const Home = () => {
             <div style={{ color: '#666', display: 'flex', gap: '8px', marginBottom: '8px' }}><IconClock size={18}/> 9:30–10:30 PM IST</div>
             <div style={{ color: '#666', display: 'flex', gap: '8px' }}><IconCreditCard size={18}/> Installment options available</div>
           </div>
-          <div style={{ background: '#bb955784', border: '2px dashed #bb9457', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '20px' }}>
-            <a href="https://wa.me/919744208752?text=I%20want%20details%20about%20the%20Diploma%20Course%20Fee%20Structure" style={{ color: '#6f1d1b', fontWeight: 600, textDecoration: 'none' }}>
+          <a href="https://wa.me/919744208752?text=I%20want%20details%20about%20the%20Diploma%20Course%20Fee%20Structure" style={{ background: '#bb955784', border: '2px dashed #bb9457', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '20px', color: '#6f1d1b', fontWeight: 600, textDecoration: 'none' }}>
              Click here to contact us on WhatsApp for fee structure and registration details.
-            </a>
-          </div>
+          </a>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import { IconMail, IconPhone, IconMapPin, IconBrandWhatsappFilled, IconSend } from '@tabler/icons-react'
+import { IconMail, IconPhone, IconMapPin, IconBrandWhatsappFilled,  } from '@tabler/icons-react'
 
 const Footer = () => {
   return (
@@ -64,23 +64,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side: Buttons */}
-        <div className="footer-actions" style={{ display: 'flex', flexDirection: 'column', gap: '12px', minWidth: '280px' }}>
-          <a href="mailto:girijasam72@mail.com" style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '10px',
-            background: '#bb9457', // Gold color
-            color: '#fff',
-            textDecoration: 'none',
-            padding: '14px 24px',
-            borderRadius: '8px',
-            fontWeight: 600,
-            fontSize: '15px'
-          }}>
-            <IconSend size={20} />
-            Send a Message
-          </a>
+        
 
           <a href="https://wa.me/919744208752" style={{
             display: 'flex',
@@ -89,19 +73,20 @@ const Footer = () => {
             gap: '10px',
             background: 'rgba(255,255,255,0.1)',
             border: '1px solid rgba(255,255,255,0.2)',
-            color: '#fff',
+            color: '#ffffff',
             textDecoration: 'none',
             padding: '14px 24px',
             borderRadius: '8px',
             fontWeight: 600,
-            fontSize: '15px'
+            fontSize: '20px',
+            marginTop: '20px',
           }}>
             <IconBrandWhatsappFilled size={20} color="#25D366" />
             WhatsApp us
           </a>
         </div>
 
-      </div>
+    
     </footer>
   )
 }
